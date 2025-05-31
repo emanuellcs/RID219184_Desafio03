@@ -1,0 +1,215 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Rubik', sans-serif;
+    background-color: #F5F9FF;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    padding: 20px;
+    color: #333;
+    font-size: 16px;
+}
+
+.task-board-container {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
+}
+
+h1 {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #11175E;
+    margin-bottom: 1.5rem;
+    text-align: left;
+}
+
+#addTaskForm {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+}
+
+#addTaskForm .form-group {
+    flex-grow: 1;
+}
+
+#addTaskForm input[type="text"] {
+    width: 100%;
+    padding: 0.75rem 1.25rem;
+    border: 1px solid #EEEEEE;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+}
+
+#addTaskForm input[type="text"]::placeholder {
+    color: #9ca3af;
+}
+
+#addTaskForm input[type="text"]:focus {
+    outline: none;
+    border-color: #FFBF00;
+    box-shadow: 0 0 0 0.1rem rgba(255, 191, 0, 0.25);
+}
+
+
+#addTaskBtn {
+    background-color: #2D70FD;
+    color: white;
+    border: none;
+    border-radius: 0.25rem;
+    padding: 0.75rem;
+    font-size: 1.25rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+    min-width: 44px;
+    height: 44px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#addTaskBtn:hover {
+    background-color: #4338ca;
+}
+
+#taskList {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.task-item {
+    background-color: transparent;
+    font-family: "Inter", sans-serif;
+    padding: 1rem 1.75rem;
+    border: 1px solid #EEEEEE;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1rem;
+    transition: opacity 0.3s ease;
+}
+
+.task-info {
+    flex-grow: 1;
+    overflow: hidden;
+}
+
+.task-name {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #001747;
+    margin-bottom: 0.9rem;
+    word-break: break-word;
+}
+
+.task-item.completed .task-name {
+    text-decoration: line-through;
+    color: #6b7280;
+}
+
+.task-meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+    color: #B1BACB;
+}
+
+.task-tag {
+    background-color: transparent;
+    color: #B1BACB;
+    border: 1px solid #B1BACB;
+    padding: 0.2rem 0.6rem;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    text-transform: lowercase;
+    white-space: nowrap;
+    display: inline-block;
+    line-height: 1.2;
+}
+
+.complete-btn {
+    background-color: #2D70FD;
+    color: white;
+    border: none;
+    padding: 0.625rem 1.25rem;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    font-size: 1.125rem;
+    font-weight: 500;
+    transition: background-color 0.2s ease-in-out;
+    white-space: nowrap;
+    flex-shrink: 0;
+    align-self: center;
+}
+
+.complete-btn:hover {
+    background-color: #2563eb;
+}
+
+.completed-icon {
+    width: 1.75rem;
+    height: 1.75rem;
+    color: #28a745;
+    flex-shrink: 0;
+    align-self: center;
+}
+
+#taskCounter {
+    font-family: "Inter", sans-serif;
+    text-align: right;
+    font-size: 0.875rem;
+    color: #B1BACB;
+    margin-top: 1rem;
+}
+
+hr {
+    height: 1px;
+    background-color: #EEEEEE;
+    border: none;
+}
+
+@media (min-width: 768px) {
+    #addTaskForm {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    #addTaskForm .form-group:nth-child(1) { flex-grow: 2; }
+    #addTaskForm .form-group:nth-child(2) { flex-grow: 1; }
+
+    #addTaskBtn {
+        flex-shrink: 0;
+        width: auto;
+        min-width: 44px;
+    }
+
+    .task-item {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+    }
+
+    .complete-btn,
+    .completed-icon {
+        align-self: auto;
+    }
+}
